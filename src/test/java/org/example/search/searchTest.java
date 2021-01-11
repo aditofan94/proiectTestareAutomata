@@ -1,6 +1,8 @@
 package org.example.search;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,5 +14,7 @@ public class searchTest {
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.emag.ro/");
+
+        driver.findElement(By.id("searchboxTrigger")).sendKeys("mouse" + Keys.ENTER);
     }
 }
