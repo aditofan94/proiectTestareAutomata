@@ -1,4 +1,4 @@
-package org.example.search;
+package org.teste;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
