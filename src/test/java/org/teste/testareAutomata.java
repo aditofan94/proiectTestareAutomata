@@ -8,10 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class searchTest {
+public class testareAutomata {
 
     @Test
-    public void searchWithOneWord () {
+    public void testeAutomate () {
 
         System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -29,5 +29,6 @@ public class searchTest {
         driver.findElement(By.id("session_key")).sendKeys("123testemail" + Keys.ENTER);
         driver.findElement(By.id("session_password")).sendKeys("123testpassword" + Keys.ENTER);
 
+        driver.close();
     }
 }
