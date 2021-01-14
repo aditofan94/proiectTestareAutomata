@@ -16,19 +16,20 @@ public class searchTest {
         System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        //with one word
+        //search with one word
         driver.get("https://www.emag.ro/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.id("searchboxTrigger")).sendKeys("mouse" + Keys.ENTER);
 
-        //with several words
+        //search with several words + add item to basket
         driver.get("https://www.emag.ro/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.id("searchboxTrigger")).sendKeys("controller wireless playstation" + Keys.ENTER);
 
-        driver.close();
+        driver.findElement(By.xpath("//*[@id=\"card_grid\"]/div[1]/div/div/div[3]/div[3]/form/button")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("/html/body/div[13]/div/div/div[2]/div/div[3]/a")).sendKeys(Keys.ENTER);
 
     }
 }
