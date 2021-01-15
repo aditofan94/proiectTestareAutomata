@@ -13,17 +13,36 @@ public class loginTest {
     @Test
     public void loginAttempt () {
 
+        //login attempt with dummy text in chrome browser
         System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        //login attempt with dummy text
         driver.get("https://www.linkedin.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        driver.findElement(By.id("session_key")).sendKeys("123testemail" + Keys.ENTER);
-        driver.findElement(By.id("session_password")).sendKeys("123testpassword" + Keys.ENTER);
+        driver.findElement(By.id("session_key")).sendKeys("adrian" + Keys.ENTER);
+        driver.findElement(By.id("session_password")).sendKeys("adrianpassword" + Keys.ENTER);
 
+        driver.findElement(By.id("session_key")).clear();
+        driver.findElement(By.id("session_password")).clear();
+
+        driver.findElement(By.id("session_key")).sendKeys("diana" + Keys.ENTER);
+        driver.findElement(By.id("session_password")).sendKeys("dianapassword" + Keys.ENTER);
+
+        driver.findElement(By.id("session_key")).clear();
+        driver.findElement(By.id("session_password")).clear();
+
+        driver.findElement(By.id("session_key")).sendKeys("anca" + Keys.ENTER);
+        driver.findElement(By.id("session_password")).sendKeys("ancapassword" + Keys.ENTER);
+
+        driver.findElement(By.id("session_key")).clear();
+        driver.findElement(By.id("session_password")).clear();
+
+        driver.findElement(By.id("session_key")).sendKeys("adi_tofan@yahoo.com" + Keys.ENTER);
+        driver.findElement(By.id("session_password")).sendKeys("??????" + Keys.ENTER);
+
+        driver.quit();
 
     }
 }
