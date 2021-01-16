@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +26,7 @@ public class searchTest {
 
         driver1.quit();
 
+
         //search with one word in firefox browser
         System.setProperty("webdriver.gecko.driver", "C:\\webdrivers\\geckodriver.exe");
         WebDriver driver2 = new FirefoxDriver();
@@ -35,6 +37,18 @@ public class searchTest {
         driver2.findElement(By.id("searchac")).sendKeys("keyboard" + Keys.ENTER);
 
         driver2.quit();
+
+
+        //search with one word in internet explorer browser
+        System.setProperty("webdriver.ie.driver", "C:\\webdrivers\\IEDriverServer.exe");
+        WebDriver driver3 = new InternetExplorerDriver();
+
+        driver3.get("https://www.cel.ro/");
+        driver3.manage().window().maximize();
+        driver3.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver3.findElement(By.id("keyword")).sendKeys("mouse" + Keys.ENTER);
+
+        driver3.quit();
 
     }
 }
