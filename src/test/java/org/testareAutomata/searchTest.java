@@ -15,7 +15,7 @@ public class searchTest {
     @Test
     public void simpleSearch () {
 
-        //search with one word in chrome browser
+        //search test with one word in chrome browser
         System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
         WebDriver driver1 = new ChromeDriver();
 
@@ -27,7 +27,7 @@ public class searchTest {
         driver1.quit();
 
 
-        //search with one word in firefox browser
+        //search test with one word in firefox browser
         System.setProperty("webdriver.gecko.driver", "C:\\webdrivers\\geckodriver.exe");
         WebDriver driver2 = new FirefoxDriver();
 
@@ -39,14 +39,14 @@ public class searchTest {
         driver2.quit();
 
 
-        //search with one word in internet explorer browser
+        //search test with one word in internet explorer browser
         System.setProperty("webdriver.ie.driver", "C:\\webdrivers\\IEDriverServer.exe");
         WebDriver driver3 = new InternetExplorerDriver();
 
         driver3.get("https://www.cel.ro/");
         driver3.manage().window().maximize();
         driver3.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver3.findElement(By.id("keyword")).sendKeys("mouse" + Keys.ENTER);
+        driver3.findElement(By.id("keyword")).sendKeys("joystick" + Keys.ENTER);
 
         driver3.quit();
 

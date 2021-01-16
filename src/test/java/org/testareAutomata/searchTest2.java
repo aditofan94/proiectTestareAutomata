@@ -13,7 +13,7 @@ public class searchTest2 {
    @Test
     public void simpleSearch2 () {
 
-       //search with several words in chrome browser + add item to basket
+       //search test with several words in chrome browser + add item to basket
         System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
