@@ -19,7 +19,6 @@ public class AppConfig {
 
     }
 
-
     private static String chromeDriverPath = properties.getProperty("chrome.driver.path");
     private static String geckoDriverPath = properties.getProperty("gecko.driver.path");
     private static String internetExplorerDriverPath = properties.getProperty("ie.driver.path");

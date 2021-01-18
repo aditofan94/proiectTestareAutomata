@@ -5,8 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class DriverFactory {
 
     public static WebDriver getDriver(String browser){
@@ -27,10 +25,6 @@ public class DriverFactory {
                 driver = new InternetExplorerDriver();
                 break;
         }
-
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         return driver;
 

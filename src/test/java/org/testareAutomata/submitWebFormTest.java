@@ -1,27 +1,20 @@
 package org.testareAutomata;
 
 import org.AppConfig;
+import org.TestBase;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
-
-public class submitWebFormTest {
-
+public class submitWebFormTest extends TestBase {
 
 
     @Test
     public void completeWebForm () {
 
-        //complete all steps in the web form and then click the "submit" button (in chrome browser)
+        //complete all steps in the web form and then click the "submit" button
         System.setProperty("webdriver.chrome.driver", AppConfig.getChromeDriverPath());
-        WebDriver driver = new ChromeDriver();
 
         driver.get(AppConfig.getSiteurl5());
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.findElement(By.id("first-name")).sendKeys("Adrian");
         driver.findElement(By.id("last-name")).sendKeys("Tofan");
@@ -33,9 +26,6 @@ public class submitWebFormTest {
         driver.findElement(By.xpath("//*[@id=\"datepicker\"]")).click();
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/table/tbody/tr[4]/td[1]")).click();
         driver.findElement(By.xpath("/html/body/div/form/div/div[8]/a")).click();
-
-        driver.manage().deleteAllCookies();
-        driver.quit();
 
     }
 }

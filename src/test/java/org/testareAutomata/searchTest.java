@@ -9,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class searchTest {
 
     @Test
@@ -21,8 +19,6 @@ public class searchTest {
         WebDriver driver1 = new ChromeDriver();
 
         driver1.get(AppConfig.getSiteurl1());
-        driver1.manage().window().maximize();
-        driver1.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver1.findElement(By.id("searchboxTrigger")).sendKeys("mouse" + Keys.ENTER);
 
         driver1.quit();
@@ -33,8 +29,6 @@ public class searchTest {
         WebDriver driver2 = new FirefoxDriver();
 
         driver2.get(AppConfig.getSiteurl2());
-        driver2.manage().window().maximize();
-        driver2.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver2.findElement(By.id("searchac")).sendKeys("keyboard" + Keys.ENTER);
 
         driver2.quit();
@@ -45,8 +39,6 @@ public class searchTest {
         WebDriver driver3 = new InternetExplorerDriver();
 
         driver3.get(AppConfig.getSiteurl3());
-        driver3.manage().window().maximize();
-        driver3.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver3.findElement(By.id("keyword")).sendKeys("joystick" + Keys.ENTER);
 
         driver3.quit();
