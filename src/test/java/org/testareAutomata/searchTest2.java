@@ -1,5 +1,6 @@
 package org.testareAutomata;
 
+import org.AppConfig;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,10 +15,10 @@ public class searchTest2 {
     public void simpleSearch2 () {
 
        //search test with several words in chrome browser + add item to basket
-        System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", AppConfig.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://www.emag.ro/");
+        driver.get(AppConfig.getSiteurl1());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.id("searchboxTrigger")).sendKeys("controller wireless playstation" + Keys.ENTER);

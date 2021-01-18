@@ -1,5 +1,6 @@
 package org.testareAutomata;
 
+import org.AppConfig;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,10 +15,10 @@ public class loginTest {
     public void loginAttempt () {
 
         //login attempt with dummy text in chrome browser
-        System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", AppConfig.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://www.linkedin.com/");
+        driver.get(AppConfig.getSiteurl4());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

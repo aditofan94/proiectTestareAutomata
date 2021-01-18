@@ -1,5 +1,6 @@
 package org.testareAutomata;
 
+import org.AppConfig;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,10 +16,10 @@ public class submitWebFormTest {
     public void completeWebForm () {
 
         //complete all steps in the web form and then click the "submit" button (in chrome browser)
-        System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", AppConfig.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
 
-        driver.get("https://formy-project.herokuapp.com/form");
+        driver.get(AppConfig.getSiteurl5());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -34,6 +35,7 @@ public class submitWebFormTest {
         driver.findElement(By.xpath("/html/body/div/form/div/div[8]/a")).click();
 
         driver.manage().deleteAllCookies();
+        driver.quit();
 
     }
 }
