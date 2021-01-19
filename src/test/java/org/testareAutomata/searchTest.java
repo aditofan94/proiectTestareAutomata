@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class searchTest {
 
     @Test
@@ -37,6 +39,8 @@ public class searchTest {
         //search test with one word in internet explorer browser
         System.setProperty("webdriver.ie.driver", AppConfig.getInternetExplorerDriverPath());
         WebDriver driver3 = new InternetExplorerDriver();
+        driver3.manage().window().maximize();
+        driver3.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver3.get(AppConfig.getSiteurl3());
         driver3.findElement(By.id("keyword")).sendKeys("joystick" + Keys.ENTER);
